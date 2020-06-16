@@ -3,13 +3,8 @@ class Solution:
         head = 0
         tail = len(nums) - 1
         return get_index(head, tail, nums, target)
-x = 0
-def get_index(head, tail, nums, target):
-    global x
-    x += 1
-    
+def get_index(head, tail, nums, target): 
     point = int((tail - head) / 2) + head
-    print(x, point, head, tail)
     if nums[point] == target:
         #匹配成功
         return point
@@ -23,8 +18,5 @@ def get_index(head, tail, nums, target):
             else:
                 tail = point - 1
             return get_index(head, tail, nums, target)
-
-
-    
-
+        
 print(Solution().search([ 2 , 5], 2))
